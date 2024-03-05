@@ -1,0 +1,3 @@
+optim_name: torch.optim.AdamW
+params:
+  lr: 1e-4

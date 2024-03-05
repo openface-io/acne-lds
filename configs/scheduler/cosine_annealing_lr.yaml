@@ -1,0 +1,4 @@
+scheduler_name: torch.optim.lr_scheduler.CosineAnnealingLR
+params:
+    T_max: 20
+    eta_min: 0

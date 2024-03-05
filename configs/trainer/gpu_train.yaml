@@ -1,0 +1,4 @@
+max_epochs: 120
+devices: 1
+accelerator: "auto"
+logger: "wandb"

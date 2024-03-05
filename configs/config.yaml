@@ -1,0 +1,6 @@
+defaults:
+    - path: path_data
+    - train_val_params: params
+    - optimizers: sgd
+    - scheduler: step_lr
+    - trainer: gpu_train

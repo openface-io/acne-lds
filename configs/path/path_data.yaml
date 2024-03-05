@@ -1,0 +1,3 @@
+train_file: Detection/VOC2007/ImageSets/Main/NNEW_trainval_0.txt
+val_file: Detection/VOC2007/ImageSets/Main/NNEW_test_0.txt
+data_path: Classification/JPEGImages

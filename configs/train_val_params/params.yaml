@@ -1,0 +1,8 @@
+batch_size: 32
+batch_size_val: 20
+lam: 0.3
+sigma: 3.0
+eps_min: 0.6
+num_acne_cls: 13
+# can be "model_ldl" or "model_ld_smoothing"
+model_type: model_ld_smoothing

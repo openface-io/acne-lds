@@ -1,0 +1,4 @@
+scheduler_name: torch.optim.lr_scheduler.CosineAnnealingWarmRestarts
+params:
+    T_0: 20
+    eta_min: 0
