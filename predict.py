@@ -30,25 +30,26 @@ def main(config: DictConfig):
     cls_test = torch.tensor([], dtype=torch.int32)
     cnt_test = torch.tensor([], dtype=torch.int32)
     model.eval()
-    for step, (b_x, b_y, b_l) in enumerate(test_loader):
-        print(f"Step {step}")
-        cls, cou, cou2cls = model(b_x)
-        # Convert predictions back to Hayashi scale if needed
-        if config.model_type == "model_ld_smoothing":
-            cls = torch.stack(
-                (
-                    torch.sum(cls[:, :1], 1),
-                    torch.sum(cls[:, 1:4], 1),
-                    torch.sum(cls[:, 4:10], 1),
-                    torch.sum(cls[:, 10:], 1),
-                ),
-                1,
-            )
-        preds_cls = torch.argmax(0.5 * (cls + cou2cls), dim=1)
-        preds_cnt = torch.argmax(cou, dim=1) + torch.tensor(1)
-        # accumulate predictions
-        cls_test = torch.cat((cls_test, preds_cls))
-        cnt_test = torch.cat((cnt_test, preds_cnt))
+    with torch.no_grad():
+        for step, (b_x, b_y, b_l) in enumerate(test_loader):
+            print(f"Step {step}")
+            cls, cou, cou2cls = model(b_x)
+            # Convert predictions back to Hayashi scale if needed
+            if config.model_type == "model_ld_smoothing":
+                cls = torch.stack(
+                    (
+                        torch.sum(cls[:, :1], 1),
+                        torch.sum(cls[:, 1:4], 1),
+                        torch.sum(cls[:, 4:10], 1),
+                        torch.sum(cls[:, 10:], 1),
+                    ),
+                    1,
+                )
+            preds_cls = torch.argmax(0.5 * (cls + cou2cls), dim=1)
+            preds_cnt = torch.argmax(cou, dim=1) + torch.tensor(1)
+            # accumulate predictions
+            cls_test = torch.cat((cls_test, preds_cls))
+            cnt_test = torch.cat((cnt_test, preds_cnt))
 
     # save predictions to .csv file
     if config.save_preds:
