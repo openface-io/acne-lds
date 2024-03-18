@@ -19,7 +19,7 @@ Full list of dependencies can be found in `requirements.txt`
 - To change the data path one need to modify the config file `configs/path/path_data.yaml`
 
 - To start training one can simply run
-  
+
   ```
   python train.py
   ```

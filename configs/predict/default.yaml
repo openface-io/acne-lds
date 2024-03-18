@@ -1,0 +1,9 @@
+path_checkpoint: None # to be overriden
+path_images: Classification\JPEGImages # can be overriden
+path_images_metadata: Classification\NNEW_test_0.txt # can be overriden
+# can be "model_ldl" or "model_ld_smoothing". Don't forget to load proper checkpoint if changing the model.
+model_type: model_ld_smoothing
+device: cpu
+batch_size: 1
+# save predictions or not
+save_preds: True
