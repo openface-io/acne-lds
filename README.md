@@ -28,6 +28,30 @@ Full list of dependencies can be found in `requirements.txt`
   python train.py train_val_params.model_type=model_ldl train_val_params.num_acne_cls=4 train_val_params.lam=0.6
   ```
 
+# Inference
+- To make a prediction on any part of ACNE04 data (either train or validation parts), one can run
+  ```
+  python predict.py path_checkpoint=CHECK_PATH.pth path_images=IMG_FOLDER path_images_metadata=IMG_META.txt
+  ```
+  Script creates ```.csv``` file with predicted severity level and number of acne for every image.
 
+  One can find more settings in ```configs/predict/default.yaml```
+- For prediction on single image the following example can be useful:
+  ```python 
+  from predict_on_raw_img import ModelInit
+  from PIL import Image
+  
+  model = ModelInit(path_checkpoint=CHECKPOINT_PATH)
+  img = Image.open(PATH_TO_IMAGE)
+  predictions = model.predict_on_raw_img(img)
+  ```
 
 # Citation
+```
+@article{prokhorov2024improving,
+  title={Improving Acne Image Grading with Label Distribution Smoothing},
+  author={Prokhorov, Kirill and Kalinin, Alexandr A},
+  journal={arXiv preprint arXiv:2403.00268},
+  year={2024}
+}
+```
