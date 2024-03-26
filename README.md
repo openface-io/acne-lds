@@ -1,5 +1,7 @@
 # Improving acne image grading with Label Distribution Smoothing
-For validation of our approach ACNE04 dataset was used [link](https://github.com/xpwu95/LDL).
+- Link to paper [Improving Acne Image Grading with Label Distribution Smoothing](https://arxiv.org/abs/2403.00268)
+- For validation of our approach ACNE04 dataset was used. One can find a link to the data in the following [repository](https://github.com/xpwu95/LDL).
+- In [Google Drive folder](https://drive.google.com/drive/folders/1yCQfosewm5MctzbrCdbVNFiM9NFo80UL?usp=sharing) one can find weights for our model (`lds-weights` folder) and for LDL model from [paper](https://openaccess.thecvf.com/content_ICCV_2019/papers/Wu_Joint_Acne_Image_Grading_and_Counting_via_Label_Distribution_Learning_ICCV_2019_paper.pdf) (`ldl-weights` folder)
 
 # About/Overview
 Proposed method tries to improve Acne Imgage Grading by generating more informative label distributions for lesion counting by incorporate information about grading, while simultaneously improving the performance of direct grading by converting the severity scale into simpler class definitions.
