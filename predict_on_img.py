@@ -20,8 +20,8 @@ class ModelInit:
         # transforms
         self.transform = AcneTransformsTorch(train=False)
 
-    def predict_on_raw_img(self, img):
-        """Get prediction for given raw image."""
+    def predict_on_img(self, img):
+        """Get prediction for given image."""
         self.model.eval()
         with torch.no_grad():
             cls, cou, cou2cls = self.model(self.transform(img)[None, :, :, :])

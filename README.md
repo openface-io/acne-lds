@@ -42,13 +42,13 @@ Full list of dependencies can be found in `requirements.txt`
 
   More settings can be changed in `configs/predict/default.yaml`
 - For prediction on single image the following example can be useful:
-  ```python 
-  from predict_on_raw_img import ModelInit
+  ```python
+  from predict_on_img import ModelInit
   from PIL import Image
-  
+
   model = ModelInit(path_checkpoint=CHECKPOINT_PATH)
   img = Image.open(PATH_TO_IMAGE)
-  predictions = model.predict_on_raw_img(img)
+  predictions = model.predict_on_img(img)
   ```
 
 ## Citation
