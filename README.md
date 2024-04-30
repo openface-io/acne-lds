@@ -56,7 +56,7 @@ Full list of dependencies can be found in `requirements.txt`
 @inproceedings{prokhorov2024improving,
   title={Improving Acne Image Grading with Label Distribution Smoothing},
   author={Prokhorov, Kirill and Kalinin, Alexandr A},
-  booktitle={2024 IEEE 20th International Symposium on Biomedical Imaging (ISBI)},
+  booktitle={2024 IEEE 21th International Symposium on Biomedical Imaging (ISBI)},
   year={2024},
   organization={IEEE}
 }
